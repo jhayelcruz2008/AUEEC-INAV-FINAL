@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Loading Screen */
+.loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #007BFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeOut 1s ease forwards;
+    animation-delay: 3s;
+    z-index: 9999;
+}
+
+.spinning {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #555;
+    border-top: 5px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+body {
+    background: linear-gradient(to bottom right, #99cbee, #59b4ff);
+    margin: 0; 
+    padding: 0; 
+}
+
+/* Navigation Bar */
+nav.navigation {
+    width: 100%;
+    height: 85px;
+    background-color: rgb(15, 15, 205);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.image-logo {
+    height: 70px;
+    width: 70px;
+    margin-right: 20px;
+}
+
+.campus h5 {
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    animation: fadeInDown 2s ease-out;
+}
+
+/* Logo Link (Clickable INAV) */
+.logo-link {
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: auto;
+    font-family: serif;
+    animation: fadeInUp 2s ease-out;
+    color: #fff; /* White color to match nav */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.logo-link:hover {
+    color: #99cbee;
+}
+
+/* Main Layout */
+.main-content {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #99cbee, #59b4ff);
+    padding-top: 120px; /* prevents overlap with navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* About Info Container */
+.About-info {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(192, 191, 191, 0.95); /* Semi-transparent white for contrast */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 40px;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out;
+    margin: 20px; /* Add margin for spacing */
+}
+
+/* About Section */
+.About h1 {
+    font-size: 2.5em;
+    color: rgb(0, 0, 0); /* Blue accent */
+    margin-bottom: 20px;
+}
+
+.About p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    nav.navigation {
+        padding: 0 20px;
+        height: 70px;
+    }
+
+    .campus h5 {
+        font-size: 16px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .image-logo {
+        height: 50px;
+        width: 50px;
+    }
+
+    .main-content {
+        padding-top: 100px;
+    }
+
+    .About-info {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .About h1 {
+        font-size: 2em;
+    }
+
+    .About p {
+        font-size: 1em;
+    }
+}
+
+/* Animations */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
